@@ -105,3 +105,13 @@ let masses = [
 
 let fuelNeeds = masses.map { $0 / 3 - 2 }
 print(fuelNeeds.reduce(0, +))
+
+var total_fuel = 0
+for mass in masses {
+    var fuel = mass / 3 - 2
+    while fuel > 0 {
+        total_fuel += fuel
+        fuel = fuel / 3 - 2
+    }
+}
+print(total_fuel)
